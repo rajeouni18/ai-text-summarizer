@@ -1,17 +1,134 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="AI Text Summarizer powered by Transformers.js"
+    >
+
     <title>AI Text Summarizer</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
-<script type="module" src="app.js"></script>
+
 <body>
 
-    <h1>AI Text Summarizer</h1>
-<textarea id="input"></textarea>
+    <main class="container">
 
-<button id="summarizeBtn">Summarize</button>
+        <header class="header">
+            <h1>AI Text Summarizer</h1>
 
-<div id="output"></div>
+            <p>
+                Summarize your text directly in your browser with AI.
+            </p>
+        </header>
+
+
+        <section class="card">
+
+            <div class="section-header">
+
+                <h2>Input Text</h2>
+
+                <span id="charCount">
+                    0 characters
+                </span>
+
+            </div>
+
+
+            <textarea
+                id="inputText"
+                placeholder="Enter your text here..."
+                maxlength="5000"
+            ></textarea>
+
+
+            <div class="actions">
+
+                <button
+                    id="summarizeBtn"
+                    type="button"
+                >
+                    Summarize
+                </button>
+
+                <button
+                    id="clearBtn"
+                    type="button"
+                    class="secondary"
+                >
+                    Clear
+                </button>
+
+            </div>
+
+
+            <div
+                id="status"
+                class="status"
+                aria-live="polite"
+            >
+                Loading AI model...
+            </div>
+
+        </section>
+
+
+        <section class="card">
+
+            <div class="section-header">
+
+                <h2>Summary</h2>
+
+                <button
+                    id="copyBtn"
+                    type="button"
+                    class="copy-btn"
+                    disabled
+                >
+                    Copy
+                </button>
+
+            </div>
+
+
+            <div
+                id="outputText"
+                class="output"
+            >
+                Your summary will appear here.
+            </div>
+
+
+            <div
+                id="processingTime"
+                class="processing-time"
+            ></div>
+
+        </section>
+
+
+        <footer>
+
+            <p>
+                Powered by Transformers.js
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <script
+        type="module"
+        src="app.js"
+    ></script>
+
 </body>
+
 </html>
